@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --primary: 205 59% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 205 45% 75%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 205 20% 95%;
+    --muted-foreground: 210 12% 50%;
+
+    --accent: 205 45% 75%;
+    --accent-foreground: 210 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 20% 90%;
+    --input: 205 20% 90%;
+    --ring: 205 59% 56%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 210 20% 15%;
+    --sidebar-primary: 205 59% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 20% 95%;
+    --sidebar-accent-foreground: 205 59% 56%;
+    --sidebar-border: 205 20% 90%;
+    --sidebar-ring: 205 59% 56%;
+
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(205 59% 56%), hsl(205 45% 75%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(205 20% 98%));
+    --shadow-card: 0 4px 20px -2px hsl(205 59% 56% / 0.1);
+    --shadow-card-hover: 0 8px 30px -4px hsl(205 59% 56% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --price-color: 205 63% 42%;
+    --title-color: 216 59% 18%;
+  }
+
+  .dark {
+    --background: 210 30% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 25% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 25% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 205 59% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 20% 20%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 205 45% 75%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 205 59% 56%;
+    
+    --sidebar-background: 210 30% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 205 59% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 20% 20%;
+    --sidebar-ring: 205 59% 56%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(205 59% 56%), hsl(205 45% 75%));
+    --gradient-card: linear-gradient(180deg, hsl(210 25% 14%), hsl(210 25% 18%));
+    --shadow-card: 0 4px 20px -2px hsl(205 59% 56% / 0.2);
+    --shadow-card-hover: 0 8px 30px -4px hsl(205 59% 56% / 0.3);
+    --price-color: 205 45% 75%;
+    --title-color: 216 59% 18%;
+  }
+}
+
+@layer base {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body,
+  html,
+  input,
+  textarea,
+  select,
+  button {
+    font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  /* Typography hierarchy with Avenir Next weights */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  p, span, div, a, label, legend {
+    font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Font weight utilities */
+  .font-regular {
+    font-weight: 400;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .font-demi {
+    font-weight: 600;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  /* Letter spacing utilities for polish */
+  .tracking-tighter-custom {
+    letter-spacing: -0.03em;
+  }
+
+  .tracking-tight-custom {
+    letter-spacing: -0.02em;
+  }
+
+  .tracking-normal-custom {
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .mobile-screen {
+    min-height: 100dvh;
+    padding-top: max(env(safe-area-inset-top), 0px);
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
+
+  .mobile-content {
+    width: 100%;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .bottom-nav-space {
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom));
+  }
+
+  .sticky-safe-top {
+    top: max(env(safe-area-inset-top), 0px);
+  }
+
+  .map-cosmic-map {
+    filter: none;
+  }
+
+  .map-cosmic-overlay {
+    background: linear-gradient(160deg, rgba(59, 130, 246, 0.12), rgba(14, 116, 144, 0.18));
+  }
+
+  .map-brand-map .mapkit-marker,
+  .map-brand-map .mapkit-annotation-image {
+    filter: none;
+    box-shadow: none;
+    transition: transform 0.15s ease-out;
+  }
+
+  .map-brand-map .mapkit-marker.mapkit-selected,
+  .map-brand-map .mapkit-annotation-image.mapkit-selected {
+    transform: scale(1.04);
+  }
+
+}
